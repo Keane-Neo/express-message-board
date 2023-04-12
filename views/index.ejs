@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Message Board</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div style="display: flex; align-items: center; justify-content: space-between; width: 90vw;">
+      <h1>Message Board</h1>
+      <a href="/new"><button type="button">Create new message</button></a>
+    </div>
+    
+    <table>
+      <tr>
+      <th>Author</th>
+      <th>Message</th>
+      <th>Date</th>
+      </tr>
+    <% messages.forEach(msg => { %>
+      <tr>
+        <td style="padding: 8px">
+          <%= msg.user %>
+        </td>
+        <td style="padding: 8px">
+          <%= msg.text %>
+        </td>
+        <td style="padding: 8px">
+          <%= msg.added %>
+        </td>
+        
+      </tr>
+    <% }); %>
+    </table>
+  </body>
+</html>
